@@ -8,6 +8,6 @@
 
 #import "Person.h"
 @interface Person (Test)
-
+@property (nonatomic, assign) NSInteger testNum;
 -(void)test;
 @end

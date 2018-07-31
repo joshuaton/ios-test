@@ -10,6 +10,7 @@
 #import "Person.h"
 #import "Person+Test.h"
 
+
 @interface ViewController ()
 
 @end
@@ -23,6 +24,8 @@
     Person *person = [Person new];
     [person run];
     [person test];
+    person.testNum = 11;
+    NSLog(@"testNum:%ld", (long)person.testNum);
 }
 
 

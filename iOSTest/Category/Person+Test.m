@@ -7,8 +7,17 @@
 //
 
 #import "Person+Test.h"
+#import <objc/runtime.h>
 
 @implementation Person (Test)
+
+-(NSInteger)testNum{
+    return [objc_getAssociatedObject(self, @"testNum") integerValue];
+}
+
+-(void)setTestNum:(NSInteger)testNum{
+    return objc_setAssociatedObject(self, @"testNum", @(testNum), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 -(void)test{
     NSLog(@"test");
